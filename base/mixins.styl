@@ -1,0 +1,64 @@
+bg-image(background-image, args...)
+	background: background-image args no-repeat
+	background-size: cover
+
+bg-mask(bground, transition = 0, content = "")
+	position: relative
+	&:after
+		content: content
+		display: block
+		height: 100%
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 2
+		background: bground
+		transition: background transition
+
+border(color = currentColor, width = 1px, style = solid)
+	border: width style color
+
+flex-row(justify-content = space-between, align-items = stretch)
+	display: flex
+	flex-direction: row
+	justify-content: justify-content
+	align-items: align-items
+
+flex-column(justify-content = flex-start, align-items = stretch)
+	display: flex
+	flex-direction: column
+	justify-content: justify-content
+	align-items: align-items
+	
+font-size(font-size, slash = '', line-height = 0)
+	font-size: font-size
+	if (line-height) 
+		line-height: line-height
+		
+outline(color = currentColor, width = 1px, style = solid)
+	outline: width style color
+	
+position(position, top = auto, left = auto, right = auto, bottom = auto)
+	position: position
+	if (top is zeros)
+		top = left = right = bottom = 0
+	if (top is not auto)
+		top: top
+	if (left is not auto)
+		left: left
+	if (right is not auto)
+		right: right
+	if (bottom is not auto)
+		bottom: bottom
+	
+size(width, height = width)
+	width: width
+	height: height
+	
+text(text-align = center, text-transform = none, color = inherit)
+	text-align: text-align
+	text-transform: text-transform
+	color: color

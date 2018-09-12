@@ -1,0 +1,86 @@
+media(min, max = auto, orientation = "")
+	if (max == landscape || max == portrait)
+		orientation = max 
+		@media only screen and (min-width: min) and (orientation: orientation)
+			{block}
+		
+	else if (max == auto) 
+		@media only screen and (min-width: min) 
+			{block}
+			
+	else if (min == 0 and orientation) 
+		@media only screen and (max-width: max - 1)  and (orientation: orientation)
+			{block}
+	
+	else if (orientation)
+		@media only screen and (min-width: min) and (max-width: max - 1)  and (orientation: orientation)
+			{block}
+			
+	else if (min == 0)
+		@media only screen and (max-width: max - 1)
+			{block}
+	else
+		@media only screen and (min-width: min) and (max-width: max - 1) 
+			{block}
+			
+			
+media-height(min, max = auto, orientation = "")
+	if (max == landscape || max == portrait)
+		orientation = max 
+		@media only screen and (min-height: min) and (orientation: orientation)
+			{block}
+		
+	else if (max == auto) 
+		@media only screen and (min-height: min) 
+			{block}
+			
+	else if (min == 0 and orientation) 
+		@media only screen and (max-height: max - 1)  and (orientation: orientation)
+			{block}
+	
+	else if (orientation)
+		@media only screen and (min-height: min) and (max-height: max - 1)  and (orientation: orientation)
+			{block}
+			
+	else if (min == 0)
+		@media only screen and (max-height: max - 1)
+			{block}
+	else
+		@media only screen and (min-height: min) and (max-height: max - 1) 
+			{block}
+
+			
+media-landscape()
+	@media screen and (orientation: landscape)
+		{block}
+
+
+media-portrait()
+	@media screen and (orientation: portrait)
+		{block}
+
+
+media-width(min, max = auto, orientation = "")
+	if (max == landscape || max == portrait)
+		orientation = max 
+		@media only screen and (min-width: min) and (orientation: orientation)
+			{block}
+		
+	else if (max == auto) 
+		@media only screen and (min-width: min) 
+			{block}
+			
+	else if (min == 0 and orientation) 
+		@media only screen and (max-width: max - 1)  and (orientation: orientation)
+			{block}
+	
+	else if (orientation)
+		@media only screen and (min-width: min) and (max-width: max - 1)  and (orientation: orientation)
+			{block}
+			
+	else if (min == 0)
+		@media only screen and (max-width: max - 1)
+			{block}
+	else
+		@media only screen and (min-width: min) and (max-width: max - 1) 
+			{block}
