@@ -16,7 +16,8 @@ bg-mask(bground, transition = 0, content = "")
 		bottom: 0
 		z-index: 2
 		background: bground
-		transition: background transition
+		if (transition)
+		  transition: background transition
 
 border(color = currentColor, width = 1px, style = solid)
 	border: width style color
@@ -58,7 +59,9 @@ size(width, height = width)
 	width: width
 	height: height
 	
-text(text-align = center, text-transform = none, color = inherit)
+text(text-align, text-transform = none, color = currentColor)
 	text-align: text-align
-	text-transform: text-transform
-	color: color
+	if (text-transform)
+	  text-transform: text-transform
+	if (color)
+	  color: color
